@@ -9,8 +9,23 @@ myReadStream.pipe(myWriteStream)
 let server = http.createServer((req,res)=>{
   console.log(`request was made: ${req.url}`)
   res.writeHead(200, {'Content-Type' : 'text/html'})
-  let myReadStream = fs.createReadStream(`${__dirname}/index.html`,'utf8')
-  myReadStream.pipe(res)
+  switch (req.url) {
+    case '/home':
+    case '/':
+      fs.createReadStream(`${__dirname}/index.html`,'utf8').pipe(res)
+    break
+    case '/contact':
+      fs.createReadStream(`${__dirname}/contact.html`,'utf8').pipe(res)
+    break
+    case '/api/users':
+      let users = [{name: 'Rony', age: 23}, {name: 'Karla', age: 22}]
+      res.end(JSON.stringify(users))
+      break
+    default:
+    fs.createReadStream(`${__dirname}/404.html`,'utf8').pipe(res)
+  }
+
+
 })//this basically serves the text file to the client
 server.listen(3000, '127.0.0.1');
 console.log("listening to port 3000")
