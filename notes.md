@@ -3,3 +3,5 @@
 
 ##basic routing
 ### routing is to direct the client to the requested page if it exist
+
+## Express is installed as usual with npm, it help us slim our nodejs code
