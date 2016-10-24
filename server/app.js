@@ -1,11 +1,50 @@
+const express = require('express')
+let app = express()
+
+app.get('/', (req,res) => {res.send("this is the homepage")})
+app.get('/contact', (req,res) => {res.send("this is the contact page")})
+
+app.get('/profile/:id',(req, res) => {res.send(`you requested to see the profile with the id of ${req.params.id}`)})
+app.listen(3000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* WITHOUT EXPRESS (OLD)
 const http = require('http')
 const fs = require('fs')
 
-/*pipes (used to take the data from readMe to writeMe)
+pipes (used to take the data from readMe to writeMe)
 let myReadStream = fs.createReadStream(`${__dirname}/readMe.txt`,'utf8')
 let myWriteStream = fs.createWriteStream(`${__dirname}/writeMe.txt`)
 myReadStream.pipe(myWriteStream)
-*/
+
 let server = http.createServer((req,res)=>{
   console.log(`request was made: ${req.url}`)
   res.writeHead(200, {'Content-Type' : 'text/html'})
