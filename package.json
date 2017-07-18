@@ -1,0 +1,28 @@
+{
+  "name": "killeronnode",
+  "version": "0.1.0",
+  "description": "Simple knowledge base app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RonyVidaur/KillerOnNode.git"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "Rony Vidaur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RonyVidaur/KillerOnNode/issues"
+  },
+  "homepage": "https://github.com/RonyVidaur/KillerOnNode#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "pug": "^2.0.0-rc.2"
+  }
+}
